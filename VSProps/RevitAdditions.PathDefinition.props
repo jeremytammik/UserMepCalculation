@@ -1,0 +1,63 @@
+<!--
+***********************************************************************************************
+RevitAdditions.PathDefinition.props
+
+This file defines the following paths for C++/CLI addon projects.
+	1. RevitIntDir and RevitOutDir path
+	2. The Revit.exe folder path.
+
+***********************************************************************************************
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <ExtensionsToDeleteOnClean>*.obj;*.ilk;*.tlb;*.tli;*.tlh;*.tmp;*.rsp;*.pgc;*.pgd;*.idb;*.pdb;*.ib*;$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
+    <OutDir>$(SolutionDir)$(Configuration)$(PlatformName)\</OutDir>
+    <IntDir>$(SolutionDir)Intermediate\$(Configuration)$(PlatformName)\$(ProjectName)\</IntDir>
+    <RevitOutDir>$(SolutionDir)$(Configuration)$(PlatformName)\</RevitOutDir>
+    <RevitIntDir>$(SolutionDir)Intermediate\$(Configuration)$(PlatformName)\$(ProjectName)\</RevitIntDir>
+    <ThirdPartyInclude>$(SolutionDir)ThirdParty\</ThirdPartyInclude>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Win32' ">
+    <RevitExePath>$(SolutionDir)DebugWin32</RevitExePath>
+    <ThirdPartyLib>$(SolutionDir)ThirdParty\</ThirdPartyLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Win32' ">
+    <RevitExePath>$(SolutionDir)ReleaseWin32</RevitExePath>
+    <ThirdPartyLib>$(SolutionDir)ThirdParty\</ThirdPartyLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Slow_Debug|Win32' ">
+    <RevitExePath>$(SolutionDir)Slow_DebugWin32</RevitExePath>
+    <ThirdPartyLib>$(SolutionDir)ThirdParty\</ThirdPartyLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <RevitExePath>$(SolutionDir)Debugx64</RevitExePath>
+    <ThirdPartyLib>$(SolutionDir)ThirdParty64\</ThirdPartyLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <RevitExePath>$(SolutionDir)Releasex64</RevitExePath>
+    <ThirdPartyLib>$(SolutionDir)ThirdParty64\</ThirdPartyLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Slow_Debug|x64' ">
+    <RevitExePath>$(SolutionDir)Slow_Debugx64</RevitExePath>
+    <ThirdPartyLib>$(SolutionDir)ThirdParty64\</ThirdPartyLib>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Midl>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <WarnAsError>true</WarnAsError>
+    </Midl>
+    <Link>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent>
+      <Command>perl $(SolutionDir)PostBuild.pl $(ProjectDir) $(TargetPath) $(Configuration) $(Platform)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <PropertyGroup Label="Configuration">
+    <BuildLogFile>$(IntDir)BuildLog.htm</BuildLogFile>
+  </PropertyGroup>
+</Project>

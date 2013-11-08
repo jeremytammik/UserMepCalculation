@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>UserFittingAndAccessoryCalculationUIServers</Name>
+    <Assembly>C:\a\vs\UserMepCalculation\DebugWin32\UserFittingAndAccessoryCalculationUIServers.dll</Assembly>
+    <AddInId>59050336-9e78-40c7-9a67-3274f0f61b07</AddInId>
+    <FullClassName>UserFittingAndAccessoryCalculationUIServers.ServerApp</FullClassName>
+    <VendorId>USER</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>UserPressureLossReport</Name>
+    <Assembly>C:\a\vs\UserMepCalculation\Debugx64\UserPressureLossReport.dll</Assembly>
+    <AddInId>4cd947a8-aae8-4652-b3f4-10279627811d</AddInId>
+    <FullClassName>UserPressureLossReport.UserPressureLossReportApplication</FullClassName>
+    <VendorId>USER</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="DBApplication">
+    <Name>UserFittingAndAccessoryCalculationServers</Name>
+    <Assembly> C:\a\vs\UserMepCalculation\DebugWin32\UserFittingAndAccessoryCalculationServers.dll</Assembly>
+    <AddInId>2bbf7a50-33d7-4b4e-9eca-7666718eea56</AddInId>
+    <FullClassName>UserFittingAndAccessoryCalculationServers.ServerApp</FullClassName>
+    <VendorId>USER</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+  <AddIn Type="DBApplication">
+    <Name>UserStraightSegmentCalculationServers</Name>
+    <Assembly>C:\a\vs\UserMepCalculation\Debugx64\UserStraightSegmentCalculationServers.dll</Assembly>
+    <AddInId>7c8ef6bb-e00f-4de2-bf09-7a9a02c08633</AddInId>
+    <FullClassName>UserStraightSegmentCalculationServers.ServerApp</FullClassName>
+    <VendorId>USER</VendorId>
+    <VendorDescription>Autodesk, www.autodesk.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
+
+
+
+

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+      None
+    </ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E2422FD6-DB9B-4C84-AFD9-277B9B2F9044}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UserPressureLossReport</RootNamespace>
+    <AssemblyName>UserPressureLossReport</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ErrorReport>prompt</ErrorReport>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath />
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="RevitAPI">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\Autodesk\Revit 2014\RevitAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RevitAPIUI">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files\Autodesk\Revit 2014\RevitAPIUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dialogs\ReportSystemSelectorDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ReportSystemSelectorDlg.designer.cs">
+      <DependentUpon>ReportSystemSelectorDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ReportSystemTypeFilterDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ReportSystemTypeFilterDlg.designer.cs">
+      <DependentUpon>ReportSystemTypeFilterDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateReport\CsvStreamWriter.cs" />
+    <Compile Include="GenerateReport\DataGenerator.cs" />
+    <Compile Include="GenerateReport\FittingsInfo.cs" />
+    <Compile Include="GenerateReport\HtmlStreamWriter.cs" />
+    <Compile Include="Dialogs\PartialReportSettingsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\PartialReportSettingsDlg.designer.cs">
+      <DependentUpon>PartialReportSettingsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenerateReport\MEPSystemInfo.cs" />
+    <Compile Include="GenerateReport\ReportProjectInfo.cs" />
+    <Compile Include="GenerateReport\ReportInfo.cs" />
+    <Compile Include="GenerateReport\SectionsInfo.cs" />
+    <Compile Include="GenerateReport\SegmentsInfo.cs" />
+    <Compile Include="ReportSettings\PressureLossReportData.cs" />
+    <Compile Include="ReportSettings\PressureLossReportDataManager.cs" />
+    <Compile Include="PressureLossReportEntry.cs" />
+    <Compile Include="PressureLossReportHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dialogs\ReportFormatNameDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ReportFormatNameDlg.designer.cs">
+      <DependentUpon>ReportFormatNameDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ReportSettings.cs" />
+    <Compile Include="GenerateReport\SaveData.cs" />
+    <Compile Include="Dialogs\WholeReportSettingsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\WholeReportSettingsDlg.designer.cs">
+      <DependentUpon>WholeReportSettingsDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSettings\ReportFormatUpgrades.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogs\PartialReportSettingsDlg.resx">
+      <DependentUpon>PartialReportSettingsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ReportFormatNameDlg.resx">
+      <DependentUpon>ReportFormatNameDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ReportSystemSelectorDlg.resx">
+      <DependentUpon>ReportSystemSelectorDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ReportSystemTypeFilterDlg.resx">
+      <DependentUpon>ReportSystemTypeFilterDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\WholeReportSettingsDlg.resx">
+      <DependentUpon>WholeReportSettingsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ReportResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <!--
+     Always Import the appropriate RevitAdditions.CSharp.targets file here to make it can be integrated into RevitAdditions.sln.
+    -->
+  <Import Project="$(SolutionDir)VSProps\RevitAdditions.CSharp.Addin.targets" />
+  <PropertyGroup>
+    <PostBuildEvent />
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
