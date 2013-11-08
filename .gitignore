@@ -1,6 +1,9 @@
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
 [Bb]in/
 [Oo]bj/
+DebugWin32/
+Debugx64/
+Intermediate/
 
 # mstest test results
 TestResults
@@ -59,7 +62,7 @@ _ReSharper*
 *.ncrunch*
 .*crunch*.local.xml
 
-# Installshield output folder 
+# Installshield output folder
 [Ee]xpress
 
 # DocProject is a documentation generator add-in

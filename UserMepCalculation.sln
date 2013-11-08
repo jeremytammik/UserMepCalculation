@@ -2,6 +2,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserMepCalculation", "UserMepCalculation", "{DA90BF68-20E9-4EC5-A244-30B999F64366}"
 	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
 		UserMepCalculation.addin = UserMepCalculation.addin
 	EndProjectSection
 EndProject
