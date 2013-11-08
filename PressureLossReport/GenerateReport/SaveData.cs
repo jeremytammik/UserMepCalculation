@@ -56,13 +56,19 @@ namespace UserPressureLossReport
          HtmlStreamWriter writer = new HtmlStreamWriter();
          try
          {
-            //check if the xslt file exists
-            if (!File.Exists(writer.XsltFileName))
-            {
-               string subMsg = ReportResource.xsltFileSubMsg.Replace("%FULLPATH%", writer.XsltFileName);
-               UIHelperFunctions.postWarning(ReportResource.htmlGenerateTitle, ReportResource.xsltFileMsg, subMsg);
-               return false;
-            }
+  // Check if the xslt file exists
+
+  if (!File.Exists(writer.XsltFileName))
+  {
+      string subMsg = ReportResource.xsltFileSubMsg
+        .Replace("%FULLPATH%", writer.XsltFileName );
+
+      UIHelperFunctions.postWarning(
+        ReportResource.htmlGenerateTitle, 
+        ReportResource.xsltFileMsg, subMsg );
+
+      return false;
+  }
 
             PressureLossReportHelper helper = PressureLossReportHelper.instance;
             if (helper == null)

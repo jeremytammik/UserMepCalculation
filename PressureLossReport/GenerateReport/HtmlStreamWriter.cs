@@ -44,16 +44,27 @@ namespace UserPressureLossReport
     {
       try
       {
-        xmlFileName = System.IO.Path.GetDirectoryName( PressureLossReportHelper.instance.Doc.Application.RecordingJournalFilename );
-        if( xmlFileName != null && xmlFileName.Length > 0 )
-          xmlFileName = xmlFileName + "\\UserPressureLossReport" + DateTime.Now.Millisecond.ToString() + ".xml";
+        xmlFileName = System.IO.Path.GetDirectoryName( 
+          PressureLossReportHelper.instance.Doc
+            .Application.RecordingJournalFilename );
 
-        string strPath = typeof( UserPressureLossReport.WholeReportSettingsDlg ).Assembly.Location;
+        if( xmlFileName != null && xmlFileName.Length > 0 )
+          xmlFileName = xmlFileName 
+            + "\\UserPressureLossReport" 
+            + DateTime.Now.Millisecond.ToString() + ".xml";
+
+        string strPath = typeof( 
+          UserPressureLossReport.WholeReportSettingsDlg )
+            .Assembly.Location;
+
         xsltFileName = Path.Combine(
-          Path.GetDirectoryName( Path.GetDirectoryName( strPath ) ),
+          Path.GetDirectoryName( Path.GetDirectoryName( 
+            strPath ) ),
           "output", "UserPressureLossReport.xslt" );
+
         //xmlFileName = strPath + "\\UserPressureLossReport" + DateTime.Now.Millisecond.ToString() + ".xml";
         //xsltFileName = strPath + "\\UserPressureLossReport.xslt";
+
         xmlWriter = XmlWriter.Create( xmlFileName );
       }
       catch

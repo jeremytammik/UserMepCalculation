@@ -4,6 +4,7 @@
 DebugWin32/
 Debugx64/
 Intermediate/
+output/
 
 # mstest test results
 TestResults
